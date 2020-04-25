@@ -1,0 +1,13 @@
+创建分支的方法
+
+git branch <新分支的名字>
+
+git branch
+查看所有分支
+
+git checkout <分支的名字>
+
+git pull origin <分支的名字> --allow-unrelated-histories
+更新本地仓库
+
+对本地仓库进行修改
