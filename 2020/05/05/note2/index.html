@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>note2 | 7ying</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#����Ӧ��#Lecture Notes: 4.11��������¼ �����Ƿ��ʵ�Զ����������һ�����׼��Եı��� �����ڣ�����VS IP��ַ ��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע�� Windows������ ��1).ssh���½��ļ�config ��2��config�����ñ��� Host ubuntu   H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="note2">
+<meta property="og:url" content="http://7ying.github.io/2020/05/05/note2/index.html">
+<meta property="og:site_name" content="7ying">
+<meta property="og:description" content="#����Ӧ��#Lecture Notes: 4.11��������¼ �����Ƿ��ʵ�Զ����������һ�����׼��Եı��� �����ڣ�����VS IP��ַ ��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע�� Windows������ ��1).ssh���½��ļ�config ��2��config�����ñ��� Host ubuntu   H">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-05T10:03:50.786Z">
+<meta property="article:modified_time" content="2020-04-25T08:04:40.327Z">
+<meta property="article:author" content="7ying">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="7ying" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">7ying</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://7ying.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-note2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/note2/" class="article-date">
+  <time datetime="2020-05-05T10:03:50.786Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      note2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#����Ӧ��#Lecture Notes: 4.1<br>1��������¼</p>
+<p>�����Ƿ��ʵ�Զ����������һ�����׼��Եı���</p>
+<p>�����ڣ�����VS IP��ַ</p>
+<p>��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע��</p>
+<p>Windows������</p>
+<p>��1).ssh���½��ļ�config</p>
+<p>��2��config�����ñ���</p>
+<p>Host ubuntu</p>
+<p>  HostName 192.168.56.1</p>
+<p>  User lester</p>
+<p>  Port 22</p>
+<p>��3��������¼��ssh user@����</p>
+<p>2���û�Ȩ��</p>
+<p>ls-lΪ��</p>
+<p>lester@ubuntu:~/Desktop$ ls -lh</p>
+<p>������ 28K</p>
+<p>drwxr-xr-x 4 lester lester 4.0K 3��  11 09:51 01</p>
+<p>-rw-rw-r– 1 lester lester   62 4��   1 09:45 config.txt</p>
+<p>-rw-r–r– 1 lester lester  599 3��  11 10:17 def.txt</p>
+<p>-rw-r–r– 1 lester lester  779 3��  11 10:10 hello.py</p>
+<p>-rw-rw-r– 1 lester lester  405 3��  25 09:36 id_rsa.pub</p>
+<p>-rw-r–r– 1 lester lester  599 3��  11 10:19 world.py</p>
+<p>drwxrwxr-x 3 lester lester 4.0K 3��  25 09:49 zjnu</p>
+<p>���Σ�Ȩ�ޱ�ʶ����Ӳ���������û����顢�ļ�����������޸����ڡ�����</p>
+<p>d rwx rwx r-x</p>
+<p>��1)Ȩ�ޱ�ʶ����10λ</p>
+<p>��һλ��d/- �����d��ʾĿ¼-��ʾ�ļ���</p>
+<p>���λ��</p>
+<p>-��һ��RWX��ӵ���ߵ�Ȩ��</p>
+<p>-�ڶ���RWX���������Ȩ��</p>
+<p>-������RWX�������˵�Ȩ��</p>
+<p>R: �ɶ�</p>
+<p>W����д</p>
+<p>X:��ִ��</p>
+<p>��2)chmod</p>
+<p>��ʽ�� chmod +/- rwx �ļ���</p>
+<p>ʾ�����ļ��еĿ�ִ��Ȩ��</p>
+<p>ʾ�����ļ��ӿ�ִ��Ȩ�ޣ�Python�ű���shell�ű���</p>
+<p>3�������û�</p>
+<p>Linux�û����ͣ�</p>
+<p>-root�û�������ϵͳά������������Ȩ��</p>
+<p>-���������Linux���а治�Ƽ�ʹ��root</p>
+<p>-��װʱ������Ϊ��׼�û�</p>
+<p>sudo</p>
+<p>-su: substitude user�滻�û�</p>
+<p>-Ԥ���������root</p>
+<p>-��Ҫ�������룬��5������Ч��</p>
+<p>-���δ����Ȩ����ʹ��root,�ᷢ�;���</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/note2/" data-id="ck9tqxs7p0005qsunch87a2rf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/05/node3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          node3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/05/note1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">note1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/05/node7/">node7</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node6/">node6</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node5/">node5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node4/">node4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node3/">node3</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 7ying<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

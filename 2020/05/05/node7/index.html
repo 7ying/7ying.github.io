@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>node7 | 7ying</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Lecture Notes: 4.22-Git与Github使用初步Recap -SSH架构远程管理的运维体系 -SCP、Remote for VS Code远程编辑 -NAT配置问题 1、Git 版本控制系统（Version Control System, VCS） 其它VCS: CVS, Subersion, Visual source safe 开源共享，可以自架服务器，同时使用客户端访问与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node7">
+<meta property="og:url" content="http://7ying.github.io/2020/05/05/node7/index.html">
+<meta property="og:site_name" content="7ying">
+<meta property="og:description" content="Lecture Notes: 4.22-Git与Github使用初步Recap -SSH架构远程管理的运维体系 -SCP、Remote for VS Code远程编辑 -NAT配置问题 1、Git 版本控制系统（Version Control System, VCS） 其它VCS: CVS, Subersion, Visual source safe 开源共享，可以自架服务器，同时使用客户端访问与">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-05T10:04:27.557Z">
+<meta property="article:modified_time" content="2020-04-25T08:04:17.143Z">
+<meta property="article:author" content="7ying">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="7ying" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">7ying</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://7ying.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/node7/" class="article-date">
+  <time datetime="2020-05-05T10:04:27.557Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node7
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Lecture Notes: 4.22-Git与Github使用初步<br>Recap</p>
+<p>-SSH架构远程管理的运维体系</p>
+<p>-SCP、Remote for VS Code远程编辑</p>
+<p>-NAT配置问题</p>
+<p>1、Git</p>
+<p>版本控制系统（Version Control System, VCS）</p>
+<p>其它VCS: CVS, Subersion, Visual source safe</p>
+<p>开源共享，可以自架服务器，同时使用客户端访问与应用</p>
+<p>专用的第三方的Git服务，相当于租用了别人的Git服务器，在上面创建软件仓库并进行版本管理。</p>
+<p>典型的Git服务：Github，Gitlab</p>
+<p>2、Git中的基本概念</p>
+<p>-仓库：相当于一个托管的单位，一般对应一个项目</p>
+<p>-版本： 仓库中的文件的某一个状态</p>
+<p>3、Git安装</p>
+<p>Ubuntu或者Raspbian OS：</p>
+<p>apt-get/apt install git</p>
+<p>4、Git的身份认证</p>
+<p>一般情况下采用SSH或PGP密钥认证的方式。</p>
+<p>参考：SSH的免密登录</p>
+<p>5、创建Git仓库</p>
+<p><a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 注册一个账号</p>
+<p>Repositories（仓库）中选择New</p>
+<p>仓库地址：</p>
+<p><a href="https://github.com/scratchzjnu/zjnumaker.git" target="_blank" rel="noopener">https://github.com/scratchzjnu/zjnumaker.git</a></p>
+<p><a href="mailto:git@github.com">git@github.com</a>:scratchzjnu/zjnumaker.git</p>
+<p>6、Git初始化配置</p>
+<p>提前准备用户名、邮箱：scratchzjnu, <a href="mailto:service@ilester.net">service@ilester.net</a></p>
+<p>git config –global user.name “用户名”</p>
+<p>git config –global user.email “邮箱”</p>
+<p>ssh-keygen -t rsa -C “邮箱”</p>
+<p>cat ~/.ssh/id_rsa.pub并将输出的内容添加到Github账户/setttings/ssh and gpg keys</p>
+<p>7、初始化仓库</p>
+<p>创建一个用作本地存储的仓库目录</p>
+<p>git init（会初始化仓库，相关配置在.git下）</p>
+<p>注意：.git文件尽量不要修改</p>
+<p>8、将文件添加到仓库并提交</p>
+<p>前置：创建一个文件，例如：readme.md</p>
+<p>git add readme.md</p>
+<p>git commit -am “开发日志”</p>
+<p>git status</p>
+<p>9、查看文件的版本记录</p>
+<p>git log 文件名查看</p>
+<p>commit 后面的标识即为版本号</p>
+<p>10、回退版本</p>
+<p>git checkout 版本号 文件名</p>
+<p>git </p>
+<p>11、将文件上传到Git服务器</p>
+<p>前置：需要找到Git仓库地址，配置好SSH或GPG密钥</p>
+<p>git remote add origin github上的地址</p>
+<p>12、通常操作</p>
+<p>单用户：</p>
+<p>本地修改文件</p>
+<p>git add </p>
+<p>git commit </p>
+<p>git push </p>
+<p>要求：项目名称均为 用户名.github.io</p>
+<p>scratchzjnu/scratchzjnu.github.io</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/node7/" data-id="ck9tqxs7g0000qsun3w48547j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/05/node6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node6</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/05/node7/">node7</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node6/">node6</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node5/">node5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node4/">node4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node3/">node3</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 7ying<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

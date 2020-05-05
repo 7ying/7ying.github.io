@@ -64,6 +64,521 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/node7/" class="article-date">
+  <time datetime="2020-05-05T10:04:27.557Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/node7/">node7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Lecture Notes: 4.22-Git与Github使用初步<br>Recap</p>
+<p>-SSH架构远程管理的运维体系</p>
+<p>-SCP、Remote for VS Code远程编辑</p>
+<p>-NAT配置问题</p>
+<p>1、Git</p>
+<p>版本控制系统（Version Control System, VCS）</p>
+<p>其它VCS: CVS, Subersion, Visual source safe</p>
+<p>开源共享，可以自架服务器，同时使用客户端访问与应用</p>
+<p>专用的第三方的Git服务，相当于租用了别人的Git服务器，在上面创建软件仓库并进行版本管理。</p>
+<p>典型的Git服务：Github，Gitlab</p>
+<p>2、Git中的基本概念</p>
+<p>-仓库：相当于一个托管的单位，一般对应一个项目</p>
+<p>-版本： 仓库中的文件的某一个状态</p>
+<p>3、Git安装</p>
+<p>Ubuntu或者Raspbian OS：</p>
+<p>apt-get/apt install git</p>
+<p>4、Git的身份认证</p>
+<p>一般情况下采用SSH或PGP密钥认证的方式。</p>
+<p>参考：SSH的免密登录</p>
+<p>5、创建Git仓库</p>
+<p><a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 注册一个账号</p>
+<p>Repositories（仓库）中选择New</p>
+<p>仓库地址：</p>
+<p><a href="https://github.com/scratchzjnu/zjnumaker.git" target="_blank" rel="noopener">https://github.com/scratchzjnu/zjnumaker.git</a></p>
+<p><a href="mailto:git@github.com">git@github.com</a>:scratchzjnu/zjnumaker.git</p>
+<p>6、Git初始化配置</p>
+<p>提前准备用户名、邮箱：scratchzjnu, <a href="mailto:service@ilester.net">service@ilester.net</a></p>
+<p>git config –global user.name “用户名”</p>
+<p>git config –global user.email “邮箱”</p>
+<p>ssh-keygen -t rsa -C “邮箱”</p>
+<p>cat ~/.ssh/id_rsa.pub并将输出的内容添加到Github账户/setttings/ssh and gpg keys</p>
+<p>7、初始化仓库</p>
+<p>创建一个用作本地存储的仓库目录</p>
+<p>git init（会初始化仓库，相关配置在.git下）</p>
+<p>注意：.git文件尽量不要修改</p>
+<p>8、将文件添加到仓库并提交</p>
+<p>前置：创建一个文件，例如：readme.md</p>
+<p>git add readme.md</p>
+<p>git commit -am “开发日志”</p>
+<p>git status</p>
+<p>9、查看文件的版本记录</p>
+<p>git log 文件名查看</p>
+<p>commit 后面的标识即为版本号</p>
+<p>10、回退版本</p>
+<p>git checkout 版本号 文件名</p>
+<p>git </p>
+<p>11、将文件上传到Git服务器</p>
+<p>前置：需要找到Git仓库地址，配置好SSH或GPG密钥</p>
+<p>git remote add origin github上的地址</p>
+<p>12、通常操作</p>
+<p>单用户：</p>
+<p>本地修改文件</p>
+<p>git add </p>
+<p>git commit </p>
+<p>git push </p>
+<p>要求：项目名称均为 用户名.github.io</p>
+<p>scratchzjnu/scratchzjnu.github.io</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/node7/" data-id="ck9tqxs7g0000qsun3w48547j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/node6/" class="article-date">
+  <time datetime="2020-05-05T10:04:20.785Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/node6/">node6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Recep</p>
+<p>1、解决新建用户无法使用sudo</p>
+<p>原理：只有在sudo组，成为成员才可以使用</p>
+<p>具有sudo组权限，称为sudoer</p>
+<p>usermod更改用户的组信息</p>
+<p> sudo usermod -a -G sudo roy</p>
+<p>2、远程拷贝文件</p>
+<p>答案：scp</p>
+<p>远程文件传输的几种方案</p>
+<p>1、SCP</p>
+<p>2、SCP的扩展应用：WinSCP</p>
+<p>3、SFTP:可以理解从SSH通道走的FTP</p>
+<p>可以使用的客户端：WinSCP,Filezilla</p>
+<p>建议：Windows中使用Chocolatey，</p>
+<p>4、远程修改</p>
+<p>场景：需要修改远程主机上的某个文件</p>
+<p>解决方案：a, ssh登录并用nano,vi编辑</p>
+<p>b, 先用Scp,winscp等下载文件，再上传文件</p>
+<p>3, 在本地的文件编辑器中添加远程编辑的功能</p>
+<p>c, 用本地编辑器的远程修改插件</p>
+<p>示例：VS Code + Remote SSH </p>
+<p>1，在VSCode插件目录中搜索并安装Remote-SSH</p>
+<p>2， 添加主机，Ctrl +Shift +P， Remote ssh - add a new host，添加后会出现在ssh targets。</p>
+<p>3，在主机项上右键，connect …</p>
+<p>4, Open folder，打开远程主机上的某个目录</p>
+<p>Extra： VirtualBox中客户机（ubuntu）与主机(win10)的文件共享</p>
+<p>1，安装增强功能</p>
+<p>点虚拟机菜单中的“安装增强功能”</p>
+<p>自动运行光盘中的启动程序</p>
+<p>重启虚拟机</p>
+<p>2、添加共享文件夹</p>
+<p>共享文件夹路径：Win10上的某一个目录</p>
+<p>共享文件夹名称：随意</p>
+<p>建议选项：自动挂载、固定分配</p>
+<p>挂载点：一般放在/media/目录下，如/media/shared</p>
+<p>有可能出现的问题，打开挂载点时提示无权限</p>
+<p>原因：所用的用户不在vboxsf组</p>
+<p>vobxsf: virtual box shared folder</p>
+<p>sudo usermod -a -G vboxsf username</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/node6/" data-id="ck9tqxs7o0003qsungwty2sch" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/node5/" class="article-date">
+  <time datetime="2020-05-05T10:04:14.512Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/node5/">node5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、Recap: 权限</p>
+<p>r:读</p>
+<p>w:写</p>
+<p>x：执行</p>
+<p>1:类型</p>
+<p>后9位每3个一组</p>
+<p>第1组：所有者，RWX</p>
+<p>第2组：所在组,RWX</p>
+<p>第3组：其它用户,RWX</p>
+<p>rw-r–r–: 110 100 100</p>
+<p>rwxr-xr-x: 111 101 101</p>
+<p>最大的是：7</p>
+<p>最小的是：0</p>
+<p>rwxrwxrwx: 777 （Web程序的上传目录）</p>
+<p>———–：000</p>
+<p>只读：R–,100，4</p>
+<p>读写：RW-,110，6</p>
+<p>读取与执行：R-X，101，5</p>
+<p>所有权限：7</p>
+<p>a, chmod的两种方法</p>
+<p>chmod +/- rwx filename/directory</p>
+<p>chmod mask filename/directory</p>
+<p>b, 权限掩码以及原理</p>
+<p>二、用户管理常用命令</p>
+<p>1、创建、删除组</p>
+<p>groupadd:</p>
+<p>groupdel:</p>
+<p>tip: 创建新用户时，会自动创建同名用户组</p>
+<p>2、查看组信息</p>
+<p>cat /etc/group</p>
+<p>3、修改文件或目录的所在组</p>
+<p>sudo chgrp 组名 文件或目录</p>
+<p>-默认不修改子目录组信息，要递归修改：</p>
+<p>chgrp -R 组名 目录名</p>
+<p>4、添加用户</p>
+<p>useradd</p>
+<p>-g:设置所在用户组</p>
+<p>-m :自动创建家目录</p>
+<p>5、查看用户信息</p>
+<p>cat /etc/passwd</p>
+<p>cat /etc/passwd | grep 用户名</p>
+<p>lester:   x:  1000:  1000:  Lester,,,  :   /home/lester  :/bin/bash</p>
+<p>lester:用户名</p>
+<p>x:已经设置密码</p>
+<p>1000：用户标识</p>
+<p>1000: 组标识</p>
+<p>Lester: 用户名</p>
+<p>/home/lester: 家目录</p>
+<p>/bin/bash： 登录时使用的bash</p>
+<p>6、设置用户密码</p>
+<p>passwd 用户名</p>
+<p>不跟用户名，修改自己的密码</p>
+<p>7、删除用户</p>
+<p>userdel 用户名</p>
+<p>-r: 删除用户时，同时删除家目录</p>
+<p>8、查看id</p>
+<p>方法一： cat /etc/passwd | grep 用户名</p>
+<p>方法二：id </p>
+<p>id 用户名：显示特定用户的标识</p>
+<p>id ：显示当前用户的标识</p>
+<p>9、查看当前登录的用户</p>
+<p>who</p>
+<p>：0表示当前终端</p>
+<p>10、查看当前用户的账号名</p>
+<p>whoami</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/node5/" data-id="ck9tqxs7p0004qsun29gr0lfu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/node4/" class="article-date">
+  <time datetime="2020-05-05T10:04:07.883Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/node4/">node4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#����Ӧ��#Lecture Notes: 4.1<br>1��������¼</p>
+<p>�����Ƿ��ʵ�Զ����������һ�����׼��Եı���</p>
+<p>�����ڣ�����VS IP��ַ</p>
+<p>��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע��</p>
+<p>Windows������</p>
+<p>��1).ssh���½��ļ�config</p>
+<p>��2��config�����ñ���</p>
+<p>Host ubuntu</p>
+<p>  HostName 192.168.56.1</p>
+<p>  User lester</p>
+<p>  Port 22</p>
+<p>��3��������¼��ssh user@����</p>
+<p>2���û�Ȩ��</p>
+<p>ls-lΪ��</p>
+<p>lester@ubuntu:~/Desktop$ ls -lh</p>
+<p>������ 28K</p>
+<p>drwxr-xr-x 4 lester lester 4.0K 3��  11 09:51 01</p>
+<p>-rw-rw-r– 1 lester lester   62 4��   1 09:45 config.txt</p>
+<p>-rw-r–r– 1 lester lester  599 3��  11 10:17 def.txt</p>
+<p>-rw-r–r– 1 lester lester  779 3��  11 10:10 hello.py</p>
+<p>-rw-rw-r– 1 lester lester  405 3��  25 09:36 id_rsa.pub</p>
+<p>-rw-r–r– 1 lester lester  599 3��  11 10:19 world.py</p>
+<p>drwxrwxr-x 3 lester lester 4.0K 3��  25 09:49 zjnu</p>
+<p>���Σ�Ȩ�ޱ�ʶ����Ӳ���������û����顢�ļ�����������޸����ڡ�����</p>
+<p>d rwx rwx r-x</p>
+<p>��1)Ȩ�ޱ�ʶ����10λ</p>
+<p>��һλ��d/- �����d��ʾĿ¼-��ʾ�ļ���</p>
+<p>���λ��</p>
+<p>-��һ��RWX��ӵ���ߵ�Ȩ��</p>
+<p>-�ڶ���RWX���������Ȩ��</p>
+<p>-������RWX�������˵�Ȩ��</p>
+<p>R: �ɶ�</p>
+<p>W����д</p>
+<p>X:��ִ��</p>
+<p>��2)chmod</p>
+<p>��ʽ�� chmod +/- rwx �ļ���</p>
+<p>ʾ�����ļ��еĿ�ִ��Ȩ��</p>
+<p>ʾ�����ļ��ӿ�ִ��Ȩ�ޣ�Python�ű���shell�ű���</p>
+<p>3�������û�</p>
+<p>Linux�û����ͣ�</p>
+<p>-root�û�������ϵͳά������������Ȩ��</p>
+<p>-���������Linux���а治�Ƽ�ʹ��root</p>
+<p>-��װʱ������Ϊ��׼�û�</p>
+<p>sudo</p>
+<p>-su: substitude user�滻�û�</p>
+<p>-Ԥ���������root</p>
+<p>-��Ҫ�������룬��5������Ч��</p>
+<p>-���δ����Ȩ����ʹ��root,�ᷢ�;���</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/node4/" data-id="ck9tqxs7l0001qsunfc5f02aq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/node3/" class="article-date">
+  <time datetime="2020-05-05T10:04:01.295Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/node3/">node3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>sudo apt-get install openssh-server</p>
+<p>sudo /etc/init.d/ssh start</p>
+<p>sudo /etc/init.d/ssh stop</p>
+<p>ssh客户端</p>
+<p>-Linux,Mac所有版本自带ssh</p>
+<p>-Windows 7开始自带ssh</p>
+<p>-第三方工具：</p>
+<pre><code>Xshell
+
+Putty</code></pre><p>ssh远程登录格式</p>
+<p>ssh [-p port] username @ host</p>
+<p>username:lester</p>
+<p>password:zjnu1234</p>
+<p>host: 192.168.56.1 (NAT=&gt;10.0.2.15)</p>
+<p>一、SSH配置免密码登录</p>
+<p>1、原理：</p>
+<p>a.生成一个密钥对，在客户机上存放私钥，在服务器上存放公钥</p>
+<p>b. 每次登录时，取私钥并与服务器上的公钥配对，配对成功表示认证通过</p>
+<p>2、步骤</p>
+<p>Q1: 如何生成？</p>
+<p>ssh-keygen(key generator): 根据机器的特征值生成id_rsa，id_rsa.pub</p>
+<p>Q2：生成后的密钥存放在何处？</p>
+<p>存放在用户目录下的.ssh</p>
+<p>Q3：服务器如何配置</p>
+<p>任务：id_rsa.pub文件的内容添加到远程主机.ssh目录下的authorized_keys文件</p>
+<p>01、Linux系统中</p>
+<p>ssh-copy-id [-p port] username@host</p>
+<p>02、Windows</p>
+<p>a. 可视化方式复制</p>
+<p>b. </p>
+<p>scp: secure copy，用于远程的安全拷贝</p>
+<p>scp [-P port] 本地文件 username@host：Desktop/01.py</p>
+<p>cat id_rsa.pub &gt;~/.ssh/authorized_keys</p>
+<p>SCP扩展</p>
+<p>1、本地文件上传至服务器</p>
+<p>2、远程文件下载到本地</p>
+<p>任务：将远程主机Desktop下的hello.py下载</p>
+<p> scp -P 22 <a href="mailto:lester@192.168.56.1">lester@192.168.56.1</a>:Desktop/hello.py hello_world.py</p>
+<p>3、将本地文件夹上传至服务器</p>
+<p>scp -r zjnu <a href="mailto:lester@192.168.56.1">lester@192.168.56.1</a>:Desktop</p>
+<p>4、将远程文件夹下载至本地</p>
+<p>scp -r <a href="mailto:lester@192.168.56.1">lester@192.168.56.1</a>:Desktop/01 01_copy</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/node3/" data-id="ck9tqxs7n0002qsungov95sok" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-note2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/note2/" class="article-date">
+  <time datetime="2020-05-05T10:03:50.786Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/note2/">note2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#����Ӧ��#Lecture Notes: 4.1<br>1��������¼</p>
+<p>�����Ƿ��ʵ�Զ����������һ�����׼��Եı���</p>
+<p>�����ڣ�����VS IP��ַ</p>
+<p>��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע��</p>
+<p>Windows������</p>
+<p>��1).ssh���½��ļ�config</p>
+<p>��2��config�����ñ���</p>
+<p>Host ubuntu</p>
+<p>  HostName 192.168.56.1</p>
+<p>  User lester</p>
+<p>  Port 22</p>
+<p>��3��������¼��ssh user@����</p>
+<p>2���û�Ȩ��</p>
+<p>ls-lΪ��</p>
+<p>lester@ubuntu:~/Desktop$ ls -lh</p>
+<p>������ 28K</p>
+<p>drwxr-xr-x 4 lester lester 4.0K 3��  11 09:51 01</p>
+<p>-rw-rw-r– 1 lester lester   62 4��   1 09:45 config.txt</p>
+<p>-rw-r–r– 1 lester lester  599 3��  11 10:17 def.txt</p>
+<p>-rw-r–r– 1 lester lester  779 3��  11 10:10 hello.py</p>
+<p>-rw-rw-r– 1 lester lester  405 3��  25 09:36 id_rsa.pub</p>
+<p>-rw-r–r– 1 lester lester  599 3��  11 10:19 world.py</p>
+<p>drwxrwxr-x 3 lester lester 4.0K 3��  25 09:49 zjnu</p>
+<p>���Σ�Ȩ�ޱ�ʶ����Ӳ���������û����顢�ļ�����������޸����ڡ�����</p>
+<p>d rwx rwx r-x</p>
+<p>��1)Ȩ�ޱ�ʶ����10λ</p>
+<p>��һλ��d/- �����d��ʾĿ¼-��ʾ�ļ���</p>
+<p>���λ��</p>
+<p>-��һ��RWX��ӵ���ߵ�Ȩ��</p>
+<p>-�ڶ���RWX���������Ȩ��</p>
+<p>-������RWX�������˵�Ȩ��</p>
+<p>R: �ɶ�</p>
+<p>W����д</p>
+<p>X:��ִ��</p>
+<p>��2)chmod</p>
+<p>��ʽ�� chmod +/- rwx �ļ���</p>
+<p>ʾ�����ļ��еĿ�ִ��Ȩ��</p>
+<p>ʾ�����ļ��ӿ�ִ��Ȩ�ޣ�Python�ű���shell�ű���</p>
+<p>3�������û�</p>
+<p>Linux�û����ͣ�</p>
+<p>-root�û�������ϵͳά������������Ȩ��</p>
+<p>-���������Linux���а治�Ƽ�ʹ��root</p>
+<p>-��װʱ������Ϊ��׼�û�</p>
+<p>sudo</p>
+<p>-su: substitude user�滻�û�</p>
+<p>-Ԥ���������root</p>
+<p>-��Ҫ�������룬��5������Ч��</p>
+<p>-���δ����Ȩ����ʹ��root,�ᷢ�;���</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://7ying.github.io/2020/05/05/note2/" data-id="ck9tqxs7p0005qsunch87a2rf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-note1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/05/note1/" class="article-date">
@@ -138,55 +653,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/05/hello-world/" class="article-date">
-  <time datetime="2020-05-05T06:37:32.234Z" itemprop="datePublished">2020-05-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://7ying.github.io/2020/05/05/hello-world/" data-id="ck9tkykj9000074un9c095n7u" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
 </section>
@@ -218,11 +684,23 @@
       <ul>
         
           <li>
-            <a href="/2020/05/05/note1/">note1</a>
+            <a href="/2020/05/05/node7/">node7</a>
           </li>
         
           <li>
-            <a href="/2020/05/05/hello-world/">Hello World</a>
+            <a href="/2020/05/05/node6/">node6</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node5/">node5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node4/">node4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/node3/">node3</a>
           </li>
         
       </ul>

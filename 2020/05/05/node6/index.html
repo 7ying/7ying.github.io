@@ -5,17 +5,17 @@
   
 
   
-  <title>note1 | 7ying</title>
+  <title>node6 | 7ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="通配符*:任意字符，包括0 ?:任意一个字符，至少1个 []:表示范围， [abc]表示a,b,c，[a-f].[0-9] 查询帮助Win: 帮助菜单、F1 Linux:  参数： –help，一次性显示所有帮助信息  -命令： man , manual –格式： man 命令（空格下一屏，b上一屏，q退出） 复制文件cp: -格式：cp  源文件路径 目标路径 -r参数，递归复制子目录和文件，只">
+  <meta name="description" content="Recep 1、解决新建用户无法使用sudo 原理：只有在sudo组，成为成员才可以使用 具有sudo组权限，称为sudoer usermod更改用户的组信息  sudo usermod -a -G sudo roy 2、远程拷贝文件 答案：scp 远程文件传输的几种方案 1、SCP 2、SCP的扩展应用：WinSCP 3、SFTP:可以理解从SSH通道走的FTP 可以使用的客户端：WinSCP,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="note1">
-<meta property="og:url" content="http://7ying.github.io/2020/05/05/note1/index.html">
+<meta property="og:title" content="node6">
+<meta property="og:url" content="http://7ying.github.io/2020/05/05/node6/index.html">
 <meta property="og:site_name" content="7ying">
-<meta property="og:description" content="通配符*:任意字符，包括0 ?:任意一个字符，至少1个 []:表示范围， [abc]表示a,b,c，[a-f].[0-9] 查询帮助Win: 帮助菜单、F1 Linux:  参数： –help，一次性显示所有帮助信息  -命令： man , manual –格式： man 命令（空格下一屏，b上一屏，q退出） 复制文件cp: -格式：cp  源文件路径 目标路径 -r参数，递归复制子目录和文件，只">
+<meta property="og:description" content="Recep 1、解决新建用户无法使用sudo 原理：只有在sudo组，成为成员才可以使用 具有sudo组权限，称为sudoer usermod更改用户的组信息  sudo usermod -a -G sudo roy 2、远程拷贝文件 答案：scp 远程文件传输的几种方案 1、SCP 2、SCP的扩展应用：WinSCP 3、SFTP:可以理解从SSH通道走的FTP 可以使用的客户端：WinSCP,">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-05T09:46:45.000Z">
-<meta property="article:modified_time" content="2020-05-05T09:49:27.567Z">
+<meta property="article:published_time" content="2020-05-05T10:04:20.785Z">
+<meta property="article:modified_time" content="2020-04-27T13:47:47.355Z">
 <meta property="article:author" content="7ying">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-note1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-node6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/05/note1/" class="article-date">
-  <time datetime="2020-05-05T09:46:45.000Z" itemprop="datePublished">2020-05-05</time>
+    <a href="/2020/05/05/node6/" class="article-date">
+  <time datetime="2020-05-05T10:04:20.785Z" itemprop="datePublished">2020-05-05</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      note1
+      node6
     </h1>
   
 
@@ -88,49 +88,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>*:任意字符，包括0</p>
-<p>?:任意一个字符，至少1个</p>
-<p>[]:表示范围， [abc]表示a,b,c，[a-f].[0-9]</p>
-<h3 id="查询帮助"><a href="#查询帮助" class="headerlink" title="查询帮助"></a>查询帮助</h3><p>Win: 帮助菜单、F1</p>
-<p>Linux:</p>
-<ul>
-<li>参数： –help，一次性显示所有帮助信息</li>
-</ul>
-<p>-命令： man , manual</p>
-<p>–格式： man 命令（空格下一屏，b上一屏，q退出）</p>
-<h3 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h3><p>cp:</p>
-<p>-格式：cp  源文件路径 目标路径</p>
-<p>-r参数，递归复制子目录和文件，只跟目录</p>
-<h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><p>-格式：mv 源文件名 目标路径</p>
-<p>-可以用mv重命名文件</p>
-<p>-移动子目录和文件，不需要加-r</p>
-<p>实践：桌面上，配合tree练习</p>
-<h3 id="查看文件内容：cat"><a href="#查看文件内容：cat" class="headerlink" title="查看文件内容：cat"></a>查看文件内容：cat</h3><p>-catalog缩写</p>
-<p>-格式：cat 文件名</p>
-<p>-参数： -b ,对非空行编号</p>
-<p>-参数：-n ，对所有行编号</p>
-<h3 id="查看文件内容：more"><a href="#查看文件内容：more" class="headerlink" title="查看文件内容：more"></a>查看文件内容：more</h3><p>-分屏显示</p>
-<p>-操作方式：空格下一屏，b上一屏，q退出</p>
-<h3 id="搜索：grep"><a href="#搜索：grep" class="headerlink" title="搜索：grep"></a>搜索：grep</h3><ul>
-<li>格式： grep 字符串 文件</li>
-</ul>
-<p>-字符串中有空格，用引号，</p>
-<p>-n: 对搜索出来的结果进行编号</p>
-<p>-v: 显示不匹配的行</p>
-<p>-i: 不区分大小写</p>
-<p>^:行的开头</p>
-<p>$：行的结尾</p>
-<h3 id="显示命令：echo"><a href="#显示命令：echo" class="headerlink" title="显示命令：echo"></a>显示命令：echo</h3><p>通常是搭配管道使用：重定向</p>
-<p>输出并覆盖原始内容 &gt;</p>
-<p>输出并追加至原始内容 &gt;&gt;</p>
-<p>|:表示一个命令的输出作为另一个命令的输入</p>
-<p>示例： ls -alh ~ | more</p>
-<p>示例： ls -alh ~ | grep P</p>
+        <p>Recep</p>
+<p>1、解决新建用户无法使用sudo</p>
+<p>原理：只有在sudo组，成为成员才可以使用</p>
+<p>具有sudo组权限，称为sudoer</p>
+<p>usermod更改用户的组信息</p>
+<p> sudo usermod -a -G sudo roy</p>
+<p>2、远程拷贝文件</p>
+<p>答案：scp</p>
+<p>远程文件传输的几种方案</p>
+<p>1、SCP</p>
+<p>2、SCP的扩展应用：WinSCP</p>
+<p>3、SFTP:可以理解从SSH通道走的FTP</p>
+<p>可以使用的客户端：WinSCP,Filezilla</p>
+<p>建议：Windows中使用Chocolatey，</p>
+<p>4、远程修改</p>
+<p>场景：需要修改远程主机上的某个文件</p>
+<p>解决方案：a, ssh登录并用nano,vi编辑</p>
+<p>b, 先用Scp,winscp等下载文件，再上传文件</p>
+<p>3, 在本地的文件编辑器中添加远程编辑的功能</p>
+<p>c, 用本地编辑器的远程修改插件</p>
+<p>示例：VS Code + Remote SSH </p>
+<p>1，在VSCode插件目录中搜索并安装Remote-SSH</p>
+<p>2， 添加主机，Ctrl +Shift +P， Remote ssh - add a new host，添加后会出现在ssh targets。</p>
+<p>3，在主机项上右键，connect …</p>
+<p>4, Open folder，打开远程主机上的某个目录</p>
+<p>Extra： VirtualBox中客户机（ubuntu）与主机(win10)的文件共享</p>
+<p>1，安装增强功能</p>
+<p>点虚拟机菜单中的“安装增强功能”</p>
+<p>自动运行光盘中的启动程序</p>
+<p>重启虚拟机</p>
+<p>2、添加共享文件夹</p>
+<p>共享文件夹路径：Win10上的某一个目录</p>
+<p>共享文件夹名称：随意</p>
+<p>建议选项：自动挂载、固定分配</p>
+<p>挂载点：一般放在/media/目录下，如/media/shared</p>
+<p>有可能出现的问题，打开挂载点时提示无权限</p>
+<p>原因：所用的用户不在vboxsf组</p>
+<p>vobxsf: virtual box shared folder</p>
+<p>sudo usermod -a -G vboxsf username</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://7ying.github.io/2020/05/05/note1/" data-id="ck9tqc5cm0000mgunepv4hdea" class="article-share-link">Share</a>
+      <a data-url="http://7ying.github.io/2020/05/05/node6/" data-id="ck9tqxs7o0003qsungwty2sch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,15 +140,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/05/05/note2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/05/node7/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          note2
+          node7
         
       </div>
     </a>
   
+  
+    <a href="/2020/05/05/node5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node5</div>
+    </a>
   
 </nav>
 
