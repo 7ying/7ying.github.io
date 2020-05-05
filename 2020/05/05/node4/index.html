@@ -5,17 +5,17 @@
   
 
   
-  <title>node4 | 7ying</title>
+  <title>note4 | 7ying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#����Ӧ��#Lecture Notes: 4.11��������¼ �����Ƿ��ʵ�Զ����������һ�����׼��Եı��� �����ڣ�����VS IP��ַ ��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע�� Windows������ ��1).ssh���½��ļ�config ��2��config�����ñ��� Host ubuntu   H">
+  <meta name="description" content="1、别名登录 给我们访问的远程主机设置一个容易记性的别名 类似于：域名VS IP地址 不同点：域名需要在DNS注册，别名在本机注册 Windows方法： （1).ssh下新建文件config （2）config中配置别名 Host ubuntu   HostName 192.168.56.1   User lester   Port 22 （3）别名登录：ssh user@别名 2、用户权限 ls">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node4">
+<meta property="og:title" content="note4">
 <meta property="og:url" content="http://7ying.github.io/2020/05/05/node4/index.html">
 <meta property="og:site_name" content="7ying">
-<meta property="og:description" content="#����Ӧ��#Lecture Notes: 4.11��������¼ �����Ƿ��ʵ�Զ����������һ�����׼��Եı��� �����ڣ�����VS IP��ַ ��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע�� Windows������ ��1).ssh���½��ļ�config ��2��config�����ñ��� Host ubuntu   H">
+<meta property="og:description" content="1、别名登录 给我们访问的远程主机设置一个容易记性的别名 类似于：域名VS IP地址 不同点：域名需要在DNS注册，别名在本机注册 Windows方法： （1).ssh下新建文件config （2）config中配置别名 Host ubuntu   HostName 192.168.56.1   User lester   Port 22 （3）别名登录：ssh user@别名 2、用户权限 ls">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-05T10:04:07.883Z">
-<meta property="article:modified_time" content="2020-04-25T08:04:40.327Z">
+<meta property="article:published_time" content="2020-05-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-05T14:01:35.837Z">
 <meta property="article:author" content="7ying">
 <meta name="twitter:card" content="summary">
   
@@ -69,7 +69,7 @@
         <section id="main"><article id="post-node4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/05/node4/" class="article-date">
-  <time datetime="2020-05-05T10:04:07.883Z" itemprop="datePublished">2020-05-05</time>
+  <time datetime="2020-05-04T16:00:00.000Z" itemprop="datePublished">2020-05-05</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      node4
+      note4
     </h1>
   
 
@@ -88,54 +88,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#����Ӧ��#Lecture Notes: 4.1<br>1��������¼</p>
-<p>�����Ƿ��ʵ�Զ����������һ�����׼��Եı���</p>
-<p>�����ڣ�����VS IP��ַ</p>
-<p>��ͬ�㣺������Ҫ��DNSע�ᣬ�����ڱ���ע��</p>
-<p>Windows������</p>
-<p>��1).ssh���½��ļ�config</p>
-<p>��2��config�����ñ���</p>
+        <p>1、别名登录</p>
+<p>给我们访问的远程主机设置一个容易记性的别名</p>
+<p>类似于：域名VS IP地址</p>
+<p>不同点：域名需要在DNS注册，别名在本机注册</p>
+<p>Windows方法：</p>
+<p>（1).ssh下新建文件config</p>
+<p>（2）config中配置别名</p>
 <p>Host ubuntu</p>
 <p>  HostName 192.168.56.1</p>
 <p>  User lester</p>
 <p>  Port 22</p>
-<p>��3��������¼��ssh user@����</p>
-<p>2���û�Ȩ��</p>
-<p>ls-lΪ��</p>
+<p>（3）别名登录：ssh user@别名</p>
+<p>2、用户权限</p>
+<p>ls-l为例</p>
 <p>lester@ubuntu:~/Desktop$ ls -lh</p>
-<p>������ 28K</p>
-<p>drwxr-xr-x 4 lester lester 4.0K 3��  11 09:51 01</p>
-<p>-rw-rw-r– 1 lester lester   62 4��   1 09:45 config.txt</p>
-<p>-rw-r–r– 1 lester lester  599 3��  11 10:17 def.txt</p>
-<p>-rw-r–r– 1 lester lester  779 3��  11 10:10 hello.py</p>
-<p>-rw-rw-r– 1 lester lester  405 3��  25 09:36 id_rsa.pub</p>
-<p>-rw-r–r– 1 lester lester  599 3��  11 10:19 world.py</p>
-<p>drwxrwxr-x 3 lester lester 4.0K 3��  25 09:49 zjnu</p>
-<p>���Σ�Ȩ�ޱ�ʶ����Ӳ���������û����顢�ļ�����������޸����ڡ�����</p>
+<p>总用量 28K</p>
+<p>drwxr-xr-x 4 lester lester 4.0K 3月  11 09:51 01</p>
+<p>-rw-rw-r– 1 lester lester   62 4月   1 09:45 config.txt</p>
+<p>-rw-r–r– 1 lester lester  599 3月  11 10:17 def.txt</p>
+<p>-rw-r–r– 1 lester lester  779 3月  11 10:10 hello.py</p>
+<p>-rw-rw-r– 1 lester lester  405 3月  25 09:36 id_rsa.pub</p>
+<p>-rw-r–r– 1 lester lester  599 3月  11 10:19 world.py</p>
+<p>drwxrwxr-x 3 lester lester 4.0K 3月  25 09:49 zjnu</p>
+<p>依次：权限标识符、硬链接数、用户与组、文件容量、最后修改日期、名称</p>
 <p>d rwx rwx r-x</p>
-<p>��1)Ȩ�ޱ�ʶ����10λ</p>
-<p>��һλ��d/- �����d��ʾĿ¼-��ʾ�ļ���</p>
-<p>���λ��</p>
-<p>-��һ��RWX��ӵ���ߵ�Ȩ��</p>
-<p>-�ڶ���RWX���������Ȩ��</p>
-<p>-������RWX�������˵�Ȩ��</p>
-<p>R: �ɶ�</p>
-<p>W����д</p>
-<p>X:��ִ��</p>
-<p>��2)chmod</p>
-<p>��ʽ�� chmod +/- rwx �ļ���</p>
-<p>ʾ�����ļ��еĿ�ִ��Ȩ��</p>
-<p>ʾ�����ļ��ӿ�ִ��Ȩ�ޣ�Python�ű���shell�ű���</p>
-<p>3�������û�</p>
-<p>Linux�û����ͣ�</p>
-<p>-root�û�������ϵͳά������������Ȩ��</p>
-<p>-���������Linux���а治�Ƽ�ʹ��root</p>
-<p>-��װʱ������Ϊ��׼�û�</p>
+<p>（1)权限标识符：10位</p>
+<p>第一位：d/- （类别，d表示目录-表示文件）</p>
+<p>后九位：</p>
+<p>-第一组RWX：拥有者的权限</p>
+<p>-第二组RWX：所在组的权限</p>
+<p>-第三组RWX：其它人的权限</p>
+<p>R: 可读</p>
+<p>W：可写</p>
+<p>X:可执行</p>
+<p>（2)chmod</p>
+<p>格式： chmod +/- rwx 文件名</p>
+<p>示例：文件夹的可执行权限</p>
+<p>示例：文件加可执行权限（Python脚本、shell脚本）</p>
+<p>3、超级用户</p>
+<p>Linux用户类型：</p>
+<p>-root用户：用于系统维护，具有所有权限</p>
+<p>-绝大多数的Linux发行版不推荐使用root</p>
+<p>-安装时创建的为标准用户</p>
 <p>sudo</p>
-<p>-su: substitude user�滻�û�</p>
-<p>-Ԥ���������root</p>
-<p>-��Ҫ�������룬��5������Ч��</p>
-<p>-���δ����Ȩ����ʹ��root,�ᷢ�;���</p>
+<p>-su: substitude user替换用户</p>
+<p>-预设的身份是root</p>
+<p>-需要输入密码，有5分钟有效期</p>
+<p>-如果未经授权尝试使用root,会发送警告</p>
 
       
     </div>
@@ -149,19 +149,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/05/05/node5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/05/note1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          node5
+          note1
         
       </div>
     </a>
   
   
-    <a href="/2020/05/05/node3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/05/05/note2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">node3</div>
+      <div class="article-nav-title">note2</div>
     </a>
   
 </nav>
@@ -210,11 +210,11 @@
           </li>
         
           <li>
-            <a href="/2020/05/05/node4/">node4</a>
+            <a href="/2020/05/05/node3/">node3</a>
           </li>
         
           <li>
-            <a href="/2020/05/05/node3/">node3</a>
+            <a href="/2020/05/05/note1/">note1</a>
           </li>
         
       </ul>
